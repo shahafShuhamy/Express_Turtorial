@@ -4,7 +4,7 @@
 const express = require('express');
 const ats = require('./access_token');
 const hbs = require('hbs');
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 
@@ -37,4 +37,6 @@ app.get('/home',(req, res) =>{
     });
 });
 
-app.listen(3000);
+app.listen(PORT, ()=>{
+    console.log(`server is running on port ${PORT}`);
+});
